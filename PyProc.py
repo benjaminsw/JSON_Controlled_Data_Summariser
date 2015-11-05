@@ -2,13 +2,29 @@ import os
 import sys
 
 
-# Split the extension from the path and normalise it to lowercase.
-ext = os.path.splitext(sys.argv[1])[-1].lower()
-print ext
-# Now we can simply use == to check for equality, no need for wildcards.
-if ext == ".csv":
-    print fp, "is a csv file"
-elif ext == ".json":
-    print fp, "is a json file"
-else:
-    print fp, "is an unknown file format."
+def createMetadata(fname, ext):
+    #will update soon
+
+
+
+
+
+def main():
+    #check if file exists
+    try:
+        with open(sys.argv[1]) as file:
+            pass
+    except IOError:
+        print('There was an error opening the file!')
+        return
+    acceptedFormat = ('.csv', '.txt', '.json')
+    # Split the extension from the path and normalise it to lowercase.
+    inoutFile = os.path.splitext(sys.argv[1].lower())
+    ext = inoutFile[-1]
+    fname = sys.argv[1]
+    createMetadata(fname=fname, ext=ext)
+
+if __name__ == '__main__':
+    main()
+
+
