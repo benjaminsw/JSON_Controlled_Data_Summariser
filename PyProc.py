@@ -1,18 +1,3 @@
-import os
-import sys
-
-def createMetadataCSV(fname):
-    #will update soon
-
-def createMetadataJSON(fname):
-    #will update soon
-
-
-def createMetadata(fname, ext):
-    if ext == '.csv':
-        createMetadataCSV(fname=fname)
-    elif ext == '.json':
-        createMetadataJSON(fname=fname)
 
 def main():
     #check if file exists
@@ -28,9 +13,9 @@ def main():
     ext = inputFile[-1]
     fname = sys.argv[1]
     if ext not in acceptedFormat:
-        print 'Please input "CSV", "TSV" or "JSON"'
+        print 'Please supply "CSV", "TSV" or "JSON" file'
         return
-    createMetadata(fname=fname, ext=ext)
+    createmetadata(fname=fname, ext=ext)
 
 if __name__ == '__main__':
     main()
